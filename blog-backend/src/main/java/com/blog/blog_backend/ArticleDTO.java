@@ -1,7 +1,13 @@
 package com.blog.blog_backend;
 
+import jakarta.validation.constraints.NotBlank;
+import org.springframework.lang.NonNull;
+
 public class ArticleDTO {
+    @NotBlank(message = "Headline is required")
     String headline;
+
+    @NotBlank(message = "Body is required")
     String body;
 
     public ArticleDTO(String headline, String body) {
