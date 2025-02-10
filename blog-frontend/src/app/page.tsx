@@ -1,4 +1,5 @@
 import ArticleList from "@/components/article-list";
+import Link from "next/link";
 
 export default async function Home() {
 
@@ -9,5 +10,10 @@ export default async function Home() {
   });
   const articles = await response.json() as Array<{ headline: string; body: string }>;
 
-  return <div className="p-8"><h1 className="text-2xl mb-4">My Blog</h1><ArticleList articles={articles} /></div>;
+  return <>
+  <ArticleList articles={articles} />
+  <div className="mt-16">
+    <Link href="/new"><span className="text-sky-400 underline">Write new article</span></Link>
+  </div>
+  </>;
 }

@@ -28,6 +28,7 @@ public class ArticlesController {
         return articleDTOs;
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping("/articles")
     public void createArticle(@Valid @RequestBody ArticleDTO articleDTO) {
         articleService.createArticle(articleDTO);

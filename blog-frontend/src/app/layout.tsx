@@ -16,7 +16,9 @@ export default function RootLayout({
       <body
         className={`antialiased`}
       >
+        <div className="p-8"><h1 className="text-2xl mb-4">My Blog</h1>
         {children}
+        </div>
       </body>
     </html>
   );
