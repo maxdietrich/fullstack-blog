@@ -1,0 +1,12 @@
+<div class="flex flex-col gap-8">
+  @if (isLoadingArticles) {
+    <div>Loading articles...</div>
+  } @else {
+    @for (article of articles; track article.headline) {
+      <blog-article headline="{{article.headline}}" body="{{article.body}}" />
+    }
+  }
+</div>
+<div class="mt-16">
+  <a routerLink="/new" class="text-sky-400 underline">Write new article</a>
+</div>

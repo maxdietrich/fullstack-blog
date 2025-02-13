@@ -13,6 +13,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@CrossOrigin(origins = {"http://localhost:3000", "http://localhost:4200"})
 @RestController
 public class ArticlesController {
 
@@ -28,7 +29,7 @@ public class ArticlesController {
         return articleDTOs;
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+
     @PostMapping("/articles")
     public void createArticle(@Valid @RequestBody ArticleDTO articleDTO) {
         articleService.createArticle(articleDTO);
